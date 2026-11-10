@@ -1,0 +1,114 @@
+/* ========== VARIABLES ========== */
+:root {
+  --anil: #1b2a5c;
+  --cempasuchil: #f4a300;
+  --rosa: #e4007c;
+  --verde: #1f6b4a;
+  --rojo: #c8372d;
+  --papel: #fffdf7;
+  --fondo: #fff1d6;
+  --texto: #1d1d2b;
+  --fuente-titulo: "Alfa Slab One", Georgia, serif;
+  --fuente-texto: "DM Sans", system-ui, sans-serif;
+}
+
+/* ========== BASE ========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { font-family: var(--fuente-texto); color: var(--texto); background: var(--papel); line-height: 1.6; }
+h1, h2, h3, .logo { font-family: var(--fuente-titulo); font-weight: 400; line-height: 1.15; color: var(--anil); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--rosa); outline-offset: 3px; }
+
+/* ========== BOTONES ========== */
+.boton { display: inline-block; background: var(--rosa); color: #fff; font-weight: 700; text-decoration: none; padding: .8rem 1.5rem; border-radius: 999px; transition: transform .15s; }
+.boton:hover { transform: translateY(-2px); }
+.boton-chico { padding: .5rem 1.1rem; font-size: .9rem; }
+.boton-grande { font-size: 1.2rem; padding: 1rem 2rem; background: var(--verde); }
+.boton-claro { background: #fff; color: var(--anil); }
+
+/* ========== ENCABEZADO ========== */
+.encabezado { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem 5%; background: var(--papel); border-bottom: 3px solid var(--cempasuchil); }
+.logo { font-size: 1.5rem; text-decoration: none; }
+.logo span { color: var(--rosa); }
+.menu { display: flex; gap: 1.4rem; }
+.menu a { text-decoration: none; font-weight: 500; }
+.menu a:hover { color: var(--rosa); }
+
+/* ========== PORTADA ========== */
+.portada { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 2rem; padding: 4rem 5%; background: var(--cempasuchil); }
+.portada h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1rem; }
+.portada p { font-size: 1.15rem; max-width: 52ch; margin-bottom: 1.6rem; }
+.portada-botones { display: flex; flex-wrap: wrap; gap: .8rem; }
+.portada-arte { position: relative; display: grid; place-items: center; min-height: 280px; }
+.gorra-grande { font-size: clamp(8rem, 18vw, 14rem); filter: drop-shadow(0 12px 0 rgba(27, 42, 92, .25)); transform: rotate(-8deg); }
+.banderin { position: absolute; top: 0; width: 70px; height: 90px; clip-path: polygon(0 0, 100% 0, 50% 100%); }
+.b1 { left: 8%; background: var(--verde); }
+.b2 { left: 44%; background: #fff; }
+.b3 { right: 8%; background: var(--rojo); }
+
+/* ========== SECCIONES GENERALES ========== */
+.seccion { padding: 4.5rem 5%; }
+.seccion-fondo { background: var(--fondo); }
+.seccion h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: .5rem; }
+.seccion-intro { max-width: 60ch; margin-bottom: 2rem; }
+
+/* ========== REJILLAS ========== */
+.rejilla { display: grid; gap: 1.5rem; }
+.rejilla-3 { grid-template-columns: repeat(3, 1fr); }
+.rejilla-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ========== CATEGORÍAS ========== */
+.categoria { padding: 2rem 1.5rem; color: #fff; border-radius: 20px 20px 4px 20px; }
+.categoria h3, .categoria p { color: #fff; }
+.categoria h3 { font-size: 1.4rem; margin-bottom: .5rem; }
+.cat-uno { background: var(--verde); }
+.cat-dos { background: var(--rojo); }
+.cat-tres { background: var(--anil); }
+
+/* ========== PRODUCTOS ========== */
+.producto { background: #fff; border: 2px solid var(--anil); border-radius: 16px; padding: 1rem; display: flex; flex-direction: column; gap: .5rem; }
+.producto h3 { font-size: 1.15rem; }
+.producto p { flex: 1; font-size: .95rem; }
+.producto .boton { align-self: flex-start; }
+.producto-foto { display: grid; place-items: center; height: 170px; font-size: 5rem; border-radius: 10px; }
+.tono-verde { background: #cfe8da; }
+.tono-rojo { background: #f6d2ce; }
+.tono-azul { background: #cfd8f2; }
+.tono-amarillo { background: #fde7b0; }
+
+/* ========== VENTAJAS ========== */
+.ventaja { padding: 1.5rem; border-left: 6px solid var(--rosa); background: var(--fondo); }
+.ventaja h3 { font-size: 1.25rem; margin-bottom: .4rem; }
+
+/* ========== PASOS ========== */
+.pasos { list-style: none; counter-reset: paso; display: grid; gap: 1rem; max-width: 640px; }
+.pasos li { counter-increment: paso; display: flex; align-items: center; gap: 1rem; background: #fff; padding: 1rem 1.2rem; border-radius: 12px; }
+.pasos li::before { content: counter(paso); flex: none; width: 2.4rem; height: 2.4rem; display: grid; place-items: center; background: var(--anil); color: #fff; border-radius: 50%; font-weight: 700; }
+
+/* ========== CONTACTO ========== */
+.contacto { text-align: center; }
+.contacto .seccion-intro { margin-inline: auto; }
+
+/* ========== PIE ========== */
+.pie { text-align: center; padding: 2.5rem 5%; background: var(--anil); color: #fff; }
+.pie .logo { color: #fff; margin-bottom: .5rem; }
+.pie-legal { font-size: .85rem; opacity: .75; margin-top: .5rem; }
+
+/* ========== BOTÓN FLOTANTE ========== */
+.flotante { position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 20; background: #25d366; color: #073b1d; font-weight: 700; text-decoration: none; padding: .85rem 1.3rem; border-radius: 999px; box-shadow: 0 6px 16px rgba(0, 0, 0, .25); }
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 960px) {
+  .rejilla-4 { grid-template-columns: repeat(2, 1fr); }
+  .menu { display: none; }
+}
+@media (max-width: 680px) {
+  .portada { grid-template-columns: 1fr; padding: 3rem 5%; }
+  .portada-arte { min-height: 220px; }
+  .rejilla-3, .rejilla-4 { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .boton { transition: none; }
+}
